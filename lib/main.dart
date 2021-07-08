@@ -1,4 +1,6 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mem_game/data/data.dart';
 import 'package:mem_game/model/tile_model.dart';
 
@@ -29,6 +31,7 @@ class _HomeState extends State<Home> {
 
   // List<TileModel>? pairs = <TileModel>[];
   // List<TileModel>? visible = <TileModel>[];
+  static AudioCache player = AudioCache();
 
   @override
   void initState() {
@@ -60,6 +63,7 @@ class _HomeState extends State<Home> {
             style: TextStyle(
 
             ),),
+
             ),
             SizedBox(height: 15,),
             Text('Punkte:',
@@ -91,7 +95,8 @@ class _HomeState extends State<Home> {
                 fontSize: 40,
                 fontWeight: FontWeight.w700,
                 color: Colors.green,
-            )): Text(""),
+            ))
+            : Text(""),
             ElevatedButton(onPressed: () => {
               // setState(() {
               //   visible = getQuestions();
