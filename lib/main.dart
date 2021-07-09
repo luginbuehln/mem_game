@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mem_game/data/data.dart';
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'MemoryGame',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.cyanAccent,
       ),
       home: Home(),
     );
@@ -31,7 +32,6 @@ class _HomeState extends State<Home> {
 
   // List<TileModel>? pairs = <TileModel>[];
   // List<TileModel>? visible = <TileModel>[];
-  static AudioCache player = AudioCache();
 
   @override
   void initState() {
@@ -56,14 +56,28 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        //       image: AssetImage("assets/wood.jpg"),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
         child: Column(
           children: <Widget>[
             AppBar(title: Text("MemoryGame",
             style: TextStyle(
-
+              fontSize: 40,
+              fontWeight: FontWeight.w800,
+              color: Colors.lightGreenAccent,
             ),),
-
+              centerTitle: true,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(10),
+                  top: Radius.circular(10)
+                )
+              ),
             ),
             SizedBox(height: 15,),
             Text('Punkte:',

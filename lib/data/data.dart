@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:mem_game/model/tile_model.dart';
 
-int punkte = 8;
+int punkte = 0;
 bool selected = false;
 String selectedImageAssetPath = "";
 int? selectedTileIndex;
